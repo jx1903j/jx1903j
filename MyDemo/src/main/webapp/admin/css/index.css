@@ -1,0 +1,17 @@
+html,body { height:98%;}
+	.top { height:15%; width:100%; background-color:#E8E8E8; color:#3D3D3D; background-color:#dCdCdC; border:2.7px #666666 solid;border-radius:15px 15px 0px 0px; }
+	.l_wel { height:100%;margin-left:3% ; font:40px "黑体";float:left}
+	.l_name { height:100%;margin-left:3% ; font:25px "黑体";float:left}
+	.top a { text-align:center; position:absolute}
+	.top a:link { line-height:30px ;text-decoration:none;width:50px; height:28px;left:90%; top:30px; color:#003399;border:1.5px #666666 solid; border-radius:5px ;background-color:#fCfCfC;}
+	.top a:hover { text-decoration:underline}
+	.l_time { font:bold 20px "黑体"; float:left; margin:20px 120px}
+	.body { height:80%; width:100%;border-left:2.7px #666666 solid;border-right:2.7px #666666 solid;}
+	.left { float:left;  
+	height:100%; width:15%; border-right:2.7px #666666 solid;}
+	.left div { margin-left:40px}
+	
+	.foot { height:9%; width:100%;border:2.7px #666666 solid;border-radius:0px 0px 15px 15px}
+	.manager {}
+	.r_title { }
+	.table_context table {}

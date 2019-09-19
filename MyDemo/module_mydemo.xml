@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_mydemo" default="compile.module.mydemo">
+  <dirname property="module.mydemo.basedir" file="${ant.file.module_mydemo}"/>
+  
+  <property name="module.jdk.home.mydemo" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.mydemo" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.mydemo" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.mydemo" value="-encoding UTF-8 -source 7 -target 1.7 ${compiler.args}"/>
+  
+  <property name="mydemo.output.dir" value="${module.mydemo.basedir}/target/classes"/>
+  <property name="mydemo.testoutput.dir" value="${module.mydemo.basedir}/target/test-classes"/>
+  
+  <path id="mydemo.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="mydemo.module.production.classpath">
+    <path refid="${module.jdk.classpath.mydemo}"/>
+    <path refid="library.maven:_org.apache.struts:struts2-core:2.1.8.classpath"/>
+    <path refid="library.maven:_com.opensymphony:xwork-core:2.1.6.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-test:2.5.6.classpath"/>
+    <path refid="library.maven:_org.freemarker:freemarker:2.3.15.classpath"/>
+    <path refid="library.maven:_commons-io:commons-io:1.3.2.classpath"/>
+    <path refid="library.maven:_com.mchange:c3p0:0.9.5.2.classpath"/>
+    <path refid="library.maven:_com.google.code.maven-play-plugin.com.mchange:c3p0-oracle-thin-extras:0.9.5.classpath"/>
+    <path refid="library.maven:_net.sf.json-lib:json-lib:jdk15:2.4.classpath"/>
+    <path refid="library.maven:_commons-beanutils:commons-beanutils:1.7.0.classpath"/>
+    <path refid="library.maven:_commons-collections:commons-collections:3.1.classpath"/>
+    <path refid="library.maven:_commons-lang:commons-lang:2.5.classpath"/>
+    <path refid="library.maven:_net.sf.ezmorph:ezmorph:1.0.3.classpath"/>
+    <path refid="library.maven:_commons-logging:commons-logging:1.2.classpath"/>
+    <path refid="library.maven:_commons-fileupload:commons-fileupload:1.4.classpath"/>
+    <path refid="library.maven:_com.sun.phobos:freemarker:2.3.12.classpath"/>
+    <path refid="library.maven:_com.sun.phobos:phobos-rhino:0.6.0.classpath"/>
+    <path refid="library.maven:_com.mchange:mchange-commons-java:0.2.11.classpath"/>
+    <path refid="library.maven:_mysql:mysql-connector-java:8.0.17.classpath"/>
+    <path refid="library.maven:_com.google.protobuf:protobuf-java:3.6.1.classpath"/>
+    <path refid="library.maven:_ognl:ognl:2.7.3.classpath"/>
+    <path refid="library.maven:_jboss:javassist:3.7.ga.classpath"/>
+    <path refid="library.maven:_es.cenobit.struts2.json:struts2-json-plugin:2.3.16.classpath"/>
+    <path refid="library.maven:_com.google.code.gson:gson:2.2.4.classpath"/>
+    <path refid="library.maven:_org.apache.struts.xwork:xwork-core:2.3.4.1.classpath"/>
+    <path refid="library.maven:_org.apache.commons:commons-lang3:3.1.classpath"/>
+    <path refid="library.maven:_asm:asm:3.3.classpath"/>
+    <path refid="library.maven:_asm:asm-commons:3.3.classpath"/>
+    <path refid="library.maven:_asm:asm-tree:3.3.classpath"/>
+    <path refid="library.tomcat_8.5.43.classpath"/>
+  </path>
+  
+  <path id="mydemo.runtime.production.module.classpath">
+    <pathelement location="${mydemo.output.dir}"/>
+    <path refid="library.maven:_org.apache.struts:struts2-core:2.1.8.classpath"/>
+    <path refid="library.maven:_com.opensymphony:xwork-core:2.1.6.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-test:2.5.6.classpath"/>
+    <path refid="library.maven:_org.freemarker:freemarker:2.3.15.classpath"/>
+    <path refid="library.maven:_commons-io:commons-io:1.3.2.classpath"/>
+    <path refid="library.maven:_com.mchange:c3p0:0.9.5.2.classpath"/>
+    <path refid="library.maven:_com.google.code.maven-play-plugin.com.mchange:c3p0-oracle-thin-extras:0.9.5.classpath"/>
+    <path refid="library.maven:_net.sf.json-lib:json-lib:jdk15:2.4.classpath"/>
+    <path refid="library.maven:_commons-beanutils:commons-beanutils:1.7.0.classpath"/>
+    <path refid="library.maven:_commons-collections:commons-collections:3.1.classpath"/>
+    <path refid="library.maven:_commons-lang:commons-lang:2.5.classpath"/>
+    <path refid="library.maven:_net.sf.ezmorph:ezmorph:1.0.3.classpath"/>
+    <path refid="library.maven:_commons-logging:commons-logging:1.2.classpath"/>
+    <path refid="library.maven:_commons-fileupload:commons-fileupload:1.4.classpath"/>
+    <path refid="library.maven:_com.sun.phobos:freemarker:2.3.12.classpath"/>
+    <path refid="library.maven:_com.sun.phobos:phobos-rhino:0.6.0.classpath"/>
+    <path refid="library.maven:_com.mchange:mchange-commons-java:0.2.11.classpath"/>
+    <path refid="library.maven:_mysql:mysql-connector-java:8.0.17.classpath"/>
+    <path refid="library.maven:_com.google.protobuf:protobuf-java:3.6.1.classpath"/>
+    <path refid="library.maven:_ognl:ognl:2.7.3.classpath"/>
+    <path refid="library.maven:_jboss:javassist:3.7.ga.classpath"/>
+    <path refid="library.maven:_es.cenobit.struts2.json:struts2-json-plugin:2.3.16.classpath"/>
+    <path refid="library.maven:_com.google.code.gson:gson:2.2.4.classpath"/>
+    <path refid="library.maven:_org.apache.struts.xwork:xwork-core:2.3.4.1.classpath"/>
+    <path refid="library.maven:_org.apache.commons:commons-lang3:3.1.classpath"/>
+    <path refid="library.maven:_asm:asm:3.3.classpath"/>
+    <path refid="library.maven:_asm:asm-commons:3.3.classpath"/>
+    <path refid="library.maven:_asm:asm-tree:3.3.classpath"/>
+  </path>
+  
+  <path id="mydemo.module.classpath">
+    <path refid="${module.jdk.classpath.mydemo}"/>
+    <pathelement location="${mydemo.output.dir}"/>
+    <path refid="library.maven:_junit:junit:4.11.classpath"/>
+    <path refid="library.maven:_org.hamcrest:hamcrest-core:1.3.classpath"/>
+    <path refid="library.maven:_org.apache.struts:struts2-core:2.1.8.classpath"/>
+    <path refid="library.maven:_com.opensymphony:xwork-core:2.1.6.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-test:2.5.6.classpath"/>
+    <path refid="library.maven:_org.freemarker:freemarker:2.3.15.classpath"/>
+    <path refid="library.maven:_commons-io:commons-io:1.3.2.classpath"/>
+    <path refid="library.maven:_com.mchange:c3p0:0.9.5.2.classpath"/>
+    <path refid="library.maven:_com.google.code.maven-play-plugin.com.mchange:c3p0-oracle-thin-extras:0.9.5.classpath"/>
+    <path refid="library.maven:_net.sf.json-lib:json-lib:jdk15:2.4.classpath"/>
+    <path refid="library.maven:_commons-beanutils:commons-beanutils:1.7.0.classpath"/>
+    <path refid="library.maven:_commons-collections:commons-collections:3.1.classpath"/>
+    <path refid="library.maven:_commons-lang:commons-lang:2.5.classpath"/>
+    <path refid="library.maven:_net.sf.ezmorph:ezmorph:1.0.3.classpath"/>
+    <path refid="library.maven:_commons-logging:commons-logging:1.2.classpath"/>
+    <path refid="library.maven:_commons-fileupload:commons-fileupload:1.4.classpath"/>
+    <path refid="library.maven:_com.sun.phobos:freemarker:2.3.12.classpath"/>
+    <path refid="library.maven:_com.sun.phobos:phobos-rhino:0.6.0.classpath"/>
+    <path refid="library.maven:_com.mchange:mchange-commons-java:0.2.11.classpath"/>
+    <path refid="library.maven:_mysql:mysql-connector-java:8.0.17.classpath"/>
+    <path refid="library.maven:_com.google.protobuf:protobuf-java:3.6.1.classpath"/>
+    <path refid="library.maven:_ognl:ognl:2.7.3.classpath"/>
+    <path refid="library.maven:_jboss:javassist:3.7.ga.classpath"/>
+    <path refid="library.maven:_es.cenobit.struts2.json:struts2-json-plugin:2.3.16.classpath"/>
+    <path refid="library.maven:_com.google.code.gson:gson:2.2.4.classpath"/>
+    <path refid="library.maven:_org.apache.struts.xwork:xwork-core:2.3.4.1.classpath"/>
+    <path refid="library.maven:_org.apache.commons:commons-lang3:3.1.classpath"/>
+    <path refid="library.maven:_asm:asm:3.3.classpath"/>
+    <path refid="library.maven:_asm:asm-commons:3.3.classpath"/>
+    <path refid="library.maven:_asm:asm-tree:3.3.classpath"/>
+    <path refid="library.tomcat_8.5.43.classpath"/>
+  </path>
+  
+  <path id="mydemo.runtime.module.classpath">
+    <pathelement location="${mydemo.testoutput.dir}"/>
+    <pathelement location="${mydemo.output.dir}"/>
+    <path refid="library.maven:_junit:junit:4.11.classpath"/>
+    <path refid="library.maven:_org.hamcrest:hamcrest-core:1.3.classpath"/>
+    <path refid="library.maven:_org.apache.struts:struts2-core:2.1.8.classpath"/>
+    <path refid="library.maven:_com.opensymphony:xwork-core:2.1.6.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-test:2.5.6.classpath"/>
+    <path refid="library.maven:_org.freemarker:freemarker:2.3.15.classpath"/>
+    <path refid="library.maven:_commons-io:commons-io:1.3.2.classpath"/>
+    <path refid="library.maven:_com.mchange:c3p0:0.9.5.2.classpath"/>
+    <path refid="library.maven:_com.google.code.maven-play-plugin.com.mchange:c3p0-oracle-thin-extras:0.9.5.classpath"/>
+    <path refid="library.maven:_net.sf.json-lib:json-lib:jdk15:2.4.classpath"/>
+    <path refid="library.maven:_commons-beanutils:commons-beanutils:1.7.0.classpath"/>
+    <path refid="library.maven:_commons-collections:commons-collections:3.1.classpath"/>
+    <path refid="library.maven:_commons-lang:commons-lang:2.5.classpath"/>
+    <path refid="library.maven:_net.sf.ezmorph:ezmorph:1.0.3.classpath"/>
+    <path refid="library.maven:_commons-logging:commons-logging:1.2.classpath"/>
+    <path refid="library.maven:_commons-fileupload:commons-fileupload:1.4.classpath"/>
+    <path refid="library.maven:_com.sun.phobos:freemarker:2.3.12.classpath"/>
+    <path refid="library.maven:_com.sun.phobos:phobos-rhino:0.6.0.classpath"/>
+    <path refid="library.maven:_com.mchange:mchange-commons-java:0.2.11.classpath"/>
+    <path refid="library.maven:_mysql:mysql-connector-java:8.0.17.classpath"/>
+    <path refid="library.maven:_com.google.protobuf:protobuf-java:3.6.1.classpath"/>
+    <path refid="library.maven:_ognl:ognl:2.7.3.classpath"/>
+    <path refid="library.maven:_jboss:javassist:3.7.ga.classpath"/>
+    <path refid="library.maven:_es.cenobit.struts2.json:struts2-json-plugin:2.3.16.classpath"/>
+    <path refid="library.maven:_com.google.code.gson:gson:2.2.4.classpath"/>
+    <path refid="library.maven:_org.apache.struts.xwork:xwork-core:2.3.4.1.classpath"/>
+    <path refid="library.maven:_org.apache.commons:commons-lang3:3.1.classpath"/>
+    <path refid="library.maven:_asm:asm:3.3.classpath"/>
+    <path refid="library.maven:_asm:asm-commons:3.3.classpath"/>
+    <path refid="library.maven:_asm:asm-tree:3.3.classpath"/>
+    <path refid="library.tomcat_8.5.43.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.mydemo">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.mydemo">
+    <patternset refid="excluded.from.module.mydemo"/>
+  </patternset>
+  
+  <path id="mydemo.module.sourcepath">
+    <dirset dir="${module.mydemo.basedir}/../">
+      <include name="MyDemo"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.mydemo" depends="compile.module.mydemo.production,compile.module.mydemo.tests" description="Compile module MyDemo"/>
+  
+  <target name="compile.module.mydemo.production" depends="register.custom.compilers" description="Compile module MyDemo; production classes">
+    <mkdir dir="${mydemo.output.dir}"/>
+    <javac2 destdir="${mydemo.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.mydemo}/javac">
+      <compilerarg line="${compiler.args.mydemo}"/>
+      <bootclasspath refid="mydemo.module.bootclasspath"/>
+      <classpath refid="mydemo.module.production.classpath"/>
+      <src refid="mydemo.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.mydemo"/>
+    </javac2>
+    
+    <copy todir="${mydemo.output.dir}/src\main\java">
+      <fileset dir="${module.mydemo.basedir}">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.mydemo.tests" depends="register.custom.compilers,compile.module.mydemo.production" description="compile module MyDemo; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.mydemo" description="cleanup module">
+    <delete dir="${mydemo.output.dir}"/>
+    <delete dir="${mydemo.testoutput.dir}"/>
+  </target>
+</project>
