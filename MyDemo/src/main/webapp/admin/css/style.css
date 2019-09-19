@@ -1,0 +1,56 @@
+@charset "utf-8";
+.top {
+	color: #333333;
+	text-align: center;
+	width: 100%;
+	font: italic bold 100px Georgia, "Times New Roman", Times, serif
+}
+
+.main {
+	height: 250px;
+	width: 30%;
+	background-color: #dCdCdC;
+	margin: 2% auto;
+	padding-top: 1%;
+	border: 3px #666666 solid;
+	border-radius: 5px
+}
+
+.main div {
+	margin: 5% 25%;
+	width: 100%;
+	font: 18px "黑体";
+	color: #363636
+}
+
+#sub input {
+	margin-left: 4%;
+	width: 20%;
+	height: 28px;
+	border: 1.5px #666666 solid;
+	border-radius: 3px;
+	background-color: #fCfCfC;
+}
+
+.inp {
+	box-shadow: 0px 0px 0px 0px;
+	height: 25px;
+	border-radius: 5px;
+	border: 1.5px #666666 solid;
+}
+#yzm,#btn{
+vertical-align: middle;
+}
+.inp1 {
+	box-shadow: 0px 0px 0px 0px;
+	height: 25px;
+	width: 60px;
+	border: 1.5px #666666 solid;
+}
+
+#hint {
+	font: 15px "黑体";
+	color: #363636;
+	color: #FF3366
+}
+

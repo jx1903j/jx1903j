@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.soft.mapper.AdminMapper">
+
+    <select id="userlist"  resultType="com.soft.entity.TblAdmin">
+        select * from tbladmin a,tblstate s where 1=1
+        <if test="uname!=null and uname.length>0">
+            and uname like '%${uname}%'
+        </if>
+
+        and a.ztid=s.ztid limit #{page},#{limit}
+    </select>
+
+    <select id="usercount"  resultType="com.soft.entity.TblAdmin">
+        select * from tbladmin a where 1=1
+        <if test="uname!=null and uname.length>0">
+            and uname like '%${uname}%'
+        </if>
+    </select>
+
+</mapper>
+
+	
